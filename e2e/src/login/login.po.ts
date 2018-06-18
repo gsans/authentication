@@ -11,12 +11,7 @@ export class LoginPage {
   }
 
   fillCredentials(credentias: any = this.credentials) {
-    element(by.css('[formControlName="username"]')).sendKeys(credentias.username);
-    element(by.css('[formControlName="password"]')).sendKeys(credentias.password);
-    element(by.css('.btn-primary')).click();
-    // wait until loading indicator is not present
-    const loading = element(by.css('img[ngIf="loading"]'));
-    browser.wait(ExpectedConditions.stalenessOf(loading));
+
   }
 
   getPageTitleText() {
@@ -24,11 +19,10 @@ export class LoginPage {
   }
 
   getErrorMessage() {
-    return element(by.css('.alert-danger')).getText();
+    
   }
 
   getRootElement() {
-    return element(by.tagName('app-login')).isPresent();
-    //return element(by.css('app-login')).isPresent();
+    
   }
 }
